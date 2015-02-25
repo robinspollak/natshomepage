@@ -5,6 +5,8 @@
 	<style>
 	body{
 		background-color: rgb(0,30,67);
+		/*background-image: url(/static/natsstatium.jpg);*/
+		background-repeat: no-repeat;
 	}
 	h1,h2{
 		color: rgb(171,1,4);
@@ -22,7 +24,8 @@
 	<IMG class="displayed" src="/static/natsW.png" alt="I can't find the photo :(" width= 400>
 	<br>
 	<br>
-	<h1>There's no game today :(</h1>
-	<h2>There are only {{days}} days <!-- , {{hours}} hours, and {{minutes}} minutes  -->until the next Nats game</h2>
+	<h1>There's no game today, but there is one tomorrow!</h1>
+	<h2>Tomorrow's game is Game Number {{gameNumber}}</h2>
+	<h2>{{opponent}}, {{gametime}} ET</h2>
 </body>
 </html>

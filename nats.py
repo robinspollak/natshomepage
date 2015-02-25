@@ -19,28 +19,18 @@ datelist = []
 for game in splitlist:
 	datelist.append(t.strptime(game[0],"%m/%d/%y"))
 
-
-#dayofgame = (t.strftime("%m/%d/%y")==game)
-#print splitlist[0]
-#print t.strftime("%m/%d/%y")
-#print splitlist[0][0]
-#print (t.strftime("%m/%d/%y") == splitlist[0][0])
-
 @nats.route('/')
 def index():
 	gamenum=getGameNumber()
 	gameToday = (datelist[gamenum].day==t.today().day)
 	if gameToday:
-		return render_template('gameday.html')
+		return render_template('gameday.html', gameNumber=gamenum, opponent=(splitlist[gamenum][2]), gametime=(splitlist[gamenum][1]))
 	else:
-		return render_template('nogame.html')
-
-
-
-
-#with nats.test_request_context():
-#	print url_for('static', filename=cats)
-	
+		timetilgame = datelist[gamenum]-t.today()
+		if timetilgame.days==0:
+			return render_template('gametomorrow.html', gameNumber=gamenum, opponent=(splitlist[gamenum][2]), gametime=(splitlist[gamenum][1]))
+		return render_template('nogame.html', days=timetilgame.days)	
+		#, hours=timetilgame.hours, minutes=timetilgame.minutes
 		
 if __name__=='__main__':
 	nats.debug=True
