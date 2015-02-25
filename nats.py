@@ -2,8 +2,12 @@ from flask import Flask, url_for, render_template
 from datetime import datetime as t
 nats = Flask(__name__)
 
-gamenum=0
-gameToday = False
+def getGameNumber():
+	for i in xrange(162):
+		date = datelist[i]
+		print date
+		if t.today().day<=date.day:
+			return i
 f = open('natsschedule.txt') #file containing information
 listofgames = []
 for line in f:
@@ -14,6 +18,8 @@ for game in listofgames:
 datelist = []
 for game in splitlist:
 	datelist.append(t.strptime(game[0],"%m/%d/%y"))
+
+
 #dayofgame = (t.strftime("%m/%d/%y")==game)
 #print splitlist[0]
 #print t.strftime("%m/%d/%y")
@@ -22,13 +28,14 @@ for game in splitlist:
 
 @nats.route('/')
 def index():
-	if gameToday and (t.today().day>currentdate.day or t.today().month>currentdate.month):
-		gameToday = False
-	if t.today()==datelist[gamenum]:
-		gameToday = True
-		currentdate = t.today()
-		gamenum+=1
-	return render_template('indexpage.html')
+	gamenum=getGameNumber()
+	gameToday = (datelist[gamenum].day==t.today().day)
+	if gameToday:
+		return render_template('gameday.html')
+	else:
+		return render_template('nogame.html')
+
+
 
 
 #with nats.test_request_context():
