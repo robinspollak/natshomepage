@@ -16,6 +16,17 @@
     	margin-right: auto 
 	}
 	</style>
+	<!-- Include the PubNub Library -->
+	<script src="https://cdn.pubnub.com/pubnub.min.js"></script>
+ 
+	<!-- Instantiate PubNub -->
+	<script type="text/javascript">
+
+  	var PUBNUB_demo = PUBNUB.init({
+    	publish_key: 'pub-c-a105a2ae-a00c-4c58-a9f5-492cdb99c99d',
+    	subscribe_key: 'sub-c-1a89fd4c-bd4b-11e4-938c-0619f8945a4f'
+  	}); 
+	</script>
 <!-- 	<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style.css') }}"> -->
 </head>
 <body>
@@ -24,5 +35,14 @@
 	<br>
 	<h1>There's no game today :(</h1>
 	<h2>There are only {{days}} days <!-- , {{hours}} hours, and {{minutes}} minutes  -->until the next Nats game</h2>
+
+	<!--PubNub Code-->
+	<script type="text/javascript">
+	//Subscribe to the demo_tutorial channel
+	PUBNUB_demo.subscribe({
+  	channel: 'demo_tutorial',
+  	message: function(m){console.log(m)}
+	});
+	</script>
 </body>
 </html>

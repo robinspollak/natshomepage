@@ -1,0 +1,1 @@
+web: gunicorn nats:nats --log-file=-
