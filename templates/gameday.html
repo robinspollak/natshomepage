@@ -15,6 +15,24 @@
     	margin-left: auto;
     	margin-right: auto 
 	}
+	a:link {
+    color: #FFFFFF;
+	}
+
+	/* visited link */
+	a:visited {
+    	color: #FFFFFF;
+	}
+
+	/* mouse over link */
+	a:hover {
+    	color: #800000;
+	}
+
+	/* selected link */
+	a:active {
+    	color: #FFFFFF;
+	}
 	</style>
 <!-- 	<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style.css') }}"> -->
 </head>
@@ -25,5 +43,8 @@
 	<h1>There's a game today :)</h1>
 	<h2>It's game {{gameNumber}}</h2>
 	<h2>{{opponent}}, {{gametime}} ET</h2>
+	<center>
+		<a href='http://www.nationals.com'>Check out the Nationals' website for gameday info</a>
+	</center>
 </body>
 </html>
