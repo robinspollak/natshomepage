@@ -24,7 +24,7 @@ def index():
 	gamenum=getGameNumber()
 	gameToday = (datelist[gamenum].day==t.today().day)
 	if gameToday:
-		return render_template('gameday.html', gameNumber=gamenum, opponent=(splitlist[gamenum][2]), gametime=(splitlist[gamenum][1]))
+		return render_template('gameday.html', gameNumber=gamenum+1, opponent=(splitlist[gamenum][2]), gametime=(splitlist[gamenum][1]))
 	else:
 		timetilgame = datelist[gamenum]-t.today()
 		if timetilgame.days==0:
