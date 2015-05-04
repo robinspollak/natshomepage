@@ -5,8 +5,7 @@ nats = Flask(__name__)
 def getGameNumber():
 	for i in xrange(162):
 		date = datelist[i]
-		print date
-		if t.today().day<=date.day:
+		if (t.today().day<=date.day and t.today().month<=date.month):
 			return i
 f = open('natsschedule.txt') #file containing information
 listofgames = []
@@ -30,7 +29,6 @@ def index():
 		if timetilgame.days==0:
 			return render_template('gametomorrow.html', gameNumber=gamenum, opponent=(splitlist[gamenum][2]), gametime=(splitlist[gamenum][1]))
 		return render_template('nogame.html', days=timetilgame.days)	
-		#, hours=timetilgame.hours, minutes=timetilgame.minutes
 		
 if __name__=='__main__':
 	nats.debug=True
