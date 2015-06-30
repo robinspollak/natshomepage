@@ -3,7 +3,7 @@ from datetime import datetime as t
 nats = Flask(__name__)
 
 def getGameNumber():
-	for i in xrange(162):
+	for i in range(162):
 		date = datelist[i]
 		if (t.today().day<=date.day and t.today().month<=date.month):
 			return i
