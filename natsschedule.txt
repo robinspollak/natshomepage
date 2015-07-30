@@ -82,7 +82,6 @@
 07/05/15|01:35 PM|Giants at Nationals|Nationals Park
 07/06/15|07:05 PM|Reds at Nationals|Nationals Park
 07/07/15|07:05 PM|Reds at Nationals|Nationals Park
-07/08/15|07:05 PM|Reds at Nationals|Nationals Park
 07/10/15|07:05 PM|Nationals at Orioles|Oriole Park at Camden Yards
 07/11/15|07:15 PM|Nationals at Orioles|Oriole Park at Camden Yards
 07/12/15|01:35 PM|Nationals at Orioles|Oriole Park at Camden Yards
