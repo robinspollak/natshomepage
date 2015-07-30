@@ -86,7 +86,6 @@
 07/10/15|07:05 PM|Nationals at Orioles|Oriole Park at Camden Yards
 07/11/15|07:15 PM|Nationals at Orioles|Oriole Park at Camden Yards
 07/12/15|01:35 PM|Nationals at Orioles|Oriole Park at Camden Yards
-07/14/15|03:33 AM|AL All-Stars at NL All-Stars|Great American Ball Park
 07/17/15|07:05 PM|Dodgers at Nationals|Nationals Park
 07/18/15|04:05 PM|Dodgers at Nationals|Nationals Park
 07/19/15|01:35 PM|Dodgers at Nationals|Nationals Park
