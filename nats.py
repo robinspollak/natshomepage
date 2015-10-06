@@ -9,9 +9,10 @@ nats.logger.setLevel(logging.ERROR)
 def getGameNumber():
 	for i in range(162):
 		date = datelist[i]
-		if (t.today().day<=date.day and t.today().month<=date.month):
-			return i
-		else:
+		try:
+			if (t.today().day<=date.day and t.today().month<=date.month):
+				return i
+		except:
 			return 999
 f = open('natsschedule.txt') #file containing information
 listofgames = []
