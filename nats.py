@@ -8,8 +8,8 @@ nats.logger.setLevel(logging.ERROR)
 
 def getGameNumber():
 	for i in range(162):
-		date = datelist[i]
 		try:
+			date = datelist[i]
 			if (t.today().day<=date.day and t.today().month<=date.month):
 				print 'hi1'
 				return i
