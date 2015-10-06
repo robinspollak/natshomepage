@@ -12,8 +12,9 @@ def getGameNumber():
 		try:
 			if (t.today().day<=date.day and t.today().month<=date.month):
 				return i
-		except IndexError:
-			return 999
+		except:
+			pass
+		return 999
 f = open('natsschedule.txt') #file containing information
 listofgames = []
 for line in f:
@@ -29,7 +30,7 @@ for game in splitlist:
 def index():
 	gamenum=getGameNumber()
 	gameToday = (datelist[gamenum].day==t.today().day)
-	if gamenum == 999:
+	if gamenum > 162:
 		return render_template('seasonover.html')
 	elif gameToday:
 		return render_template('gameday.html', gameNumber=gamenum+1, opponent=(splitlist[gamenum][2]), gametime=(splitlist[gamenum][1]))
