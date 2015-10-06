@@ -1,0 +1,48 @@
+<!doctype html>
+<html>
+<head>
+	<title>Welcome Fans!!</title>
+	<style>
+	body{
+		background-color: rgb(0,30,67);
+	}
+	h1,h2{
+		color: rgb(171,1,4);
+		text-align: center;
+	}
+	IMG.displayed{
+    	display: block;
+    	margin-left: auto;
+    	margin-right: auto 
+	}
+	</style>
+	<!-- Include the PubNub Library -->
+	<script src="https://cdn.pubnub.com/pubnub.min.js"></script>
+ 
+	<!-- Instantiate PubNub -->
+	<script type="text/javascript">
+
+  	var PUBNUB_demo = PUBNUB.init({
+    	publish_key: 'pub-c-a105a2ae-a00c-4c58-a9f5-492cdb99c99d',
+    	subscribe_key: 'sub-c-1a89fd4c-bd4b-11e4-938c-0619f8945a4f'
+  	}); 
+	</script>
+<!-- 	<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style.css') }}"> -->
+</head>
+<body>
+	<IMG class="displayed" src="/static/natsW.png" alt="I can't find the photo :(" width= 400>
+	<br>
+	<br>
+	<h1>The season is over :'( :'( :'(</h1>
+	<h2>Pitchers and Catchers report 2/20/16! Start marking the days off your calendar!</h2>
+
+	<!--PubNub Code-->
+	<script type="text/javascript">
+	//Subscribe to the demo_tutorial channel
+	PUBNUB_demo.subscribe({
+  	channel: 'demo_tutorial',
+  	message: function(m){console.log(m)}
+	});
+	</script>
+</body>
+</html>
