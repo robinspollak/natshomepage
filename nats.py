@@ -16,8 +16,8 @@ def getGameNumber():
 		except:
 			print 'hi2'
 			pass
-		print 'hi3'
-		return 999
+	print 'hi3'
+	return 999
 f = open('natsschedule.txt') #file containing information
 listofgames = []
 for line in f:
