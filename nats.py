@@ -8,15 +8,9 @@ nats.logger.setLevel(logging.ERROR)
 
 def getGameNumber():
 	for i in range(162):
-		try:
-			date = datelist[i]
-			if (t.today().day<=date.day and t.today().month<=date.month):
-				print 'hi1'
-				return i
-		except:
-			print 'hi2'
-			pass
-	print 'hi3'
+		date = datelist[i]
+		if (t.today().day<=date.day and t.today().month<=date.month):
+			return i
 	return 999
 f = open('natsschedule.txt') #file containing information
 listofgames = []
@@ -32,10 +26,11 @@ for game in splitlist:
 @nats.route('/')
 def index():
 	gamenum=getGameNumber()
-	gameToday = (datelist[gamenum].day==t.today().day)
-	if gamenum > 162:
+	try:
+		gameToday = (datelist[gamenum].day==t.today().day)
+	except:
 		return render_template('seasonover.html')
-	elif gameToday:
+	if gameToday:
 		return render_template('gameday.html', gameNumber=gamenum+1, opponent=(splitlist[gamenum][2]), gametime=(splitlist[gamenum][1]))
 	else:
 		timetilgame = datelist[gamenum]-t.today()
