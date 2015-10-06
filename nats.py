@@ -26,7 +26,7 @@ def index():
 	gameToday = (datelist[gamenum].day==t.today().day)
 	if gamenum == 999:
 		return render_template('seasonover.html')
-	if gameToday:
+	elif gameToday:
 		return render_template('gameday.html', gameNumber=gamenum+1, opponent=(splitlist[gamenum][2]), gametime=(splitlist[gamenum][1]))
 	else:
 		timetilgame = datelist[gamenum]-t.today()
