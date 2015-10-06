@@ -11,9 +11,12 @@ def getGameNumber():
 		date = datelist[i]
 		try:
 			if (t.today().day<=date.day and t.today().month<=date.month):
+				print 'hi1'
 				return i
 		except:
+			print 'hi2'
 			pass
+		print 'hi3'
 		return 999
 f = open('natsschedule.txt') #file containing information
 listofgames = []
