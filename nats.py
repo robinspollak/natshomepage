@@ -1,6 +1,10 @@
 from flask import Flask, url_for, render_template
 from datetime import datetime as t
+import sys
+import logging
 nats = Flask(__name__)
+nats.logger.addHandler(logging.StreamHandler(sys.stdout))
+nats.logger.setLevel(logging.ERROR)
 
 def getGameNumber():
 	for i in range(162):
